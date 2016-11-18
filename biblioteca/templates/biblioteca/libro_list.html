@@ -1,19 +1,13 @@
-<html>
-        <head>
-            <title>Django Girls blog</title>
-        </head>
-        <body>
-            <div>
-                <h1><a href="">Django Girls Blog</a></h1>
-            </div>
+{% extends 'biblioteca/base.html' %}
 
-            {% for lib in libros %}
-                <div>
-                    <h2><p><a href="">{{ lib.titulo }}</a></p></h2>
-                    <p>Autor: {{lib.autor}}</p>
-                    <p>Pais: {{lib.pais}}</p>
-                    <p>Año: {{lib.anio}}</p>
-                </div>
-            {% endfor %}
-        </body>
-    </html>
+{% block content %}
+    {% for lib in libros %}
+        <div class="post">
+            <div class="date">
+                {{ lib.anio }}
+            </div>
+            <h1><a href="">{{ lib.titulo }}</a></h1>
+            <p>{{ lib.pais|linebreaksbr }}</p>
+        </div>
+    {% endfor %}
+{% endblock content %}
