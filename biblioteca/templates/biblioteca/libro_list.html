@@ -7,16 +7,13 @@
                 <h1><a href="">Django Girls Blog</a></h1>
             </div>
 
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My first post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-            </div>
-
-            <div>
-                <p>published: 14.06.2014, 12:14</p>
-                <h2><a href="">My second post</a></h2>
-                <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-            </div>
+            {% for lib in libros %}
+                <div>
+                    <h2><p><a href="">{{ lib.titulo }}</a></p></h2>
+                    <p>Autor: {{lib.autor}}</p>
+                    <p>Pais: {{lib.pais}}</p>
+                    <p>Año: {{lib.anio}}</p>
+                </div>
+            {% endfor %}
         </body>
     </html>
